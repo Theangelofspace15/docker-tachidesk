@@ -47,6 +47,7 @@ RUN echo $TACHIDESK_FILENAME
 RUN curl -s --create-dirs -L $TACHIDESK_RELEASE_DOWNLOAD_URL -o /home/suwayomi/startup/tachidesk_latest.jar
 RUN echo $TACHIDESK_DOCKER_GIT_COMMIT
 RUN curl -s --create-dirs -L $STARTUP_SCRIPT_URL -o /home/suwayomi/startup/startup_script.sh
+RUN umask 0002
 
 EXPOSE 4567
 CMD ["/bin/sh", "/home/suwayomi/startup/startup_script.sh"]
